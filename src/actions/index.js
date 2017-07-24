@@ -31,7 +31,7 @@ export const loginUser = ({ email, password }) => {
           .auth()
           .createUserWithEmailAndPassword(email, password)
           .then(user => loginUserSuccess(dispatch, user))
-          .catch(() => loginUserFailed)
+          .catch(() => loginUserFailed(dispatch))
       })
   }
 }
