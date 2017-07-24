@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { emailChanged, passwordChanged } from '../actions'
+import { emailChanged, passwordChanged, loginUser } from '../actions'
 import { Card, CardSection, Input, Button } from './common'
 import PropTypes from 'prop-types'
 
@@ -9,13 +9,21 @@ class LoginForm extends Component {
     super(props)
     this.onEmailChange = this.onEmailChange.bind(this)
     this.onPasswordChange = this.onPasswordChange.bind(this)
+    this.onButtonPress = this.onButtonPress.bind(this)
   }
+
   onEmailChange (text) {
     this.props.emailChanged(text)
   }
 
   onPasswordChange (text) {
     this.props.passwordChanged(text)
+  }
+
+  onButtonPress () {
+    const { email, password } = this.props
+
+    this.props.loginUser({ email, password })
   }
 
   render () {
@@ -41,7 +49,7 @@ class LoginForm extends Component {
         </CardSection>
 
         <CardSection>
-          <Button>Login</Button>
+          <Button onPress={this.onButtonPress}>Login</Button>
         </CardSection>
       </Card>
     )
@@ -51,6 +59,7 @@ class LoginForm extends Component {
 LoginForm.propTypes = {
   emailChanged: PropTypes.func,
   passwordChanged: PropTypes.func,
+  loginUser: PropTypes.func,
   email: PropTypes.string,
   password: PropTypes.string
 }
@@ -64,5 +73,6 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, {
   emailChanged,
-  passwordChanged
+  passwordChanged,
+  loginUser
 })(LoginForm)
