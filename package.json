@@ -18,6 +18,7 @@
   "devDependencies": {
     "babel-jest": "20.0.3",
     "babel-preset-react-native": "2.1.0",
+    "detox": "^5.5.1",
     "eslint": "^4.2.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-config-standard-react": "^5.0.0",
@@ -27,9 +28,20 @@
     "eslint-plugin-react": "^7.1.0",
     "eslint-plugin-standard": "^3.0.1",
     "jest": "20.0.4",
+    "mocha": "^3.4.2",
     "react-test-renderer": "16.0.0-alpha.12"
   },
   "jest": {
     "preset": "react-native"
+  },
+  "detox": {
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/manager.app",
+        "build": "xcodebuild -project ios/manager.xcodeproj -scheme manager -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone 7"
+      }
+    }
   }
 }
