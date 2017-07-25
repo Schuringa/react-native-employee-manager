@@ -4,14 +4,15 @@ import PropTypes from 'prop-types'
 
 const CardSection = props => {
   return (
-    <View style={styles.containerStyle}>
+    <View style={[styles.containerStyle, props.style]}>
       {props.children}
     </View>
   )
 }
 
 CardSection.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.array,
+  style: PropTypes.object
 }
 
 const styles = {

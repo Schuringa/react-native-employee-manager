@@ -1,11 +1,11 @@
-require('babel-polyfill');
-const detox = require('detox');
-const config = require('../package.json').detox;
+require('babel-polyfill')
+const detox = require('detox')
+const config = require('../package.json').detox
 
 before(async () => {
-  await detox.init(config);
-});
+  await detox.init(config)
+})
 
 after(async () => {
-  await detox.cleanup();
-});
+  await detox.cleanup()
+})
