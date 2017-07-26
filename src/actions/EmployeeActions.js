@@ -6,10 +6,10 @@ import {
   EMPLOYEES_FETCH_SUCCESS
 } from './types'
 
-export const employeeUpdate = ({ props, value }) => {
+export const employeeUpdate = ({ prop, value }) => {
   return {
     type: EMPLOYEE_UPDATE,
-    payload: { props, value }
+    payload: { prop, value }
   }
 }
 
