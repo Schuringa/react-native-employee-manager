@@ -43,7 +43,7 @@ const styles = {
   textStyle: {
     flex: 1,
     fontSize: 18,
-    textAlgin: 'center',
+    textAlign: 'center',
     lineHeight: 40
   },
   containerStyle: {
