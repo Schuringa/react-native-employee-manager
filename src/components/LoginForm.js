@@ -32,18 +32,23 @@ class LoginForm extends Component {
       return <Spinner size='large' />
     }
 
-    return <Button onPress={this.onButtonPress}>Login</Button>
+    return (
+      <Button onPress={this.onButtonPress} testID='LoginButton'>
+        Login
+      </Button>
+    )
   }
 
   render () {
     return (
-      <Card>
+      <Card testID='LoginForm'>
         <CardSection>
           <Input
             label='Email'
             placeholder='email@gmail.com'
             onChangeText={this.onEmailChange}
             value={this.props.email}
+            testID='UsernameInput'
           />
         </CardSection>
 
@@ -54,6 +59,7 @@ class LoginForm extends Component {
             placeholder='password'
             onChangeText={this.onPasswordChange}
             value={this.props.password}
+            testID='PasswordInput'
           />
         </CardSection>
 
