@@ -51,7 +51,7 @@ class EmployeeEdit extends Component {
 
   render() {
     return (
-      <Card>
+      <Card testID="EditEmployeeScene">
         <EmployeeForm />
         <CardSection>
           <Button onPress={() => this.onButtonPress()}>Save Changes</Button>

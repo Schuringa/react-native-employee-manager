@@ -18,7 +18,7 @@ class ListItem extends Component {
     const { name } = this.props.employee
 
     return (
-      <TouchableWithoutFeedback onPress={this.onRowPress}>
+      <TouchableWithoutFeedback onPress={this.onRowPress} testID='ListItem'>
         <View>
           <CardSection>
             <Text style={styles.titleStyle}>
